@@ -1,10 +1,12 @@
 "use client";
 import { ProCard, ProForm, BetaSchemaForm } from '@ant-design/pro-components';
 import { Button, ConfigProvider, Divider } from 'antd';
-// import { ProCard } from '@/components'
+import enUS from 'antd/locale/en_US';
+import Table from '@/components/table'
 export default function Home() {
   return (
     <ConfigProvider
+      locale={enUS}
       prefixCls='test'
       theme={{
         token: {
@@ -16,7 +18,7 @@ export default function Home() {
         <Button type='primary'>
           我是按钮
         </Button>
-        <Divider>表单</Divider>
+        <Divider>ProForm</Divider>
         <ProForm>
           <ProCard>
             <Button type='primary'>
@@ -24,9 +26,11 @@ export default function Home() {
             </Button>
           </ProCard>
         </ProForm>
+        <Divider>DrawerForm</Divider>
         <BetaSchemaForm trigger={<Button >
-          表单按钮
+          DrawerForm 表单按钮
         </Button>} layoutType="DrawerForm" columns={[]} />
+        <Table/>
       </main>
     </ConfigProvider>
   )
